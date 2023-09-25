@@ -1,26 +1,24 @@
 
 import { Link } from "react-router-dom";
 const AllDonationCard = ({ donation }) => {
-    const { id, picture, view_image, title, card_category, card_category_bg, card_bg, text_button_bg, description, price } = donation || {}
+    const { id, picture, view_image, title, card_category, card_category_bg, card_bg, text_color, description, price } = donation || {}
     // console.log(donation);
     return (
-        <div className="">
-            <div className="hero bg-base-200">
-                <div className="hero-content flex-col lg:flex-row">
-                    <img src={view_image} className="max-w-sm rounded-lg shadow-2xl" />
-                    <div>
-                        <h1 className="text-5xl font-bold">{card_category}</h1>
-                        <p className="py-6">{title}</p>
-                        <p className="py-6">${price}</p>
-                        <Link to={`/category-details/${id}`}>
-                        <button className="btn btn-primary">View Details</button>
-                    </Link>
-                </div>
+
+        <div style={{ backgroundColor: card_bg }} className="flex rounded-lg gap-6">
+            <img src={view_image} className="" />
+            <div className="flex flex-col gap-3 pb-3">
+                <h2 className="btn w-1/2 text-sm font-medium text-center rounded-lg px-6 py-2 mt-6" style={{ backgroundColor: card_category_bg, color: text_color }}>{card_category}</h2>
+                <p className="text-2xl font-semibold">{title}</p>
+                <p className="text-base font-semibold">${price}</p>
+                <Link to={`/category-details/${id}`}>
+                    <button style={{backgroundColor: text_color}} className="btn text-white text-xl font-semibold">View Details</button>
+                </Link>
             </div>
         </div>
-             
-             
-        </div >
+
+
+
     );
 };
 

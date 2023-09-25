@@ -1,17 +1,14 @@
 
 
-
 const Banner = () => {
+
+
     return (
 
 
-        <div className="relative top-0 ">
-            <div className="hero min-h-screen" style={{
-                backgroundImage: 'url(https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg)',
-                backgroundPosition: 'top',
-          
-            }}>
-                <div className="hero-overlay bg-[white] bg-opacity-95"></div>
+        <div className="z-0">
+            <div className="hero min-h-screen">
+                <div className="hero-overlay bg-transparent"></div>
                 <div className="hero-content text-center text-neutral-content">
                     <div className=" flex flex-col justify-center items-center text-center">
                         <h1 className="mb-5 text-black text-5xl font-bold">I Grow By Helping People In Need</h1>
@@ -22,12 +19,14 @@ const Banner = () => {
                                 type="text"
                                 className="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 pr-20 font-sans text-sm font-normal text-black outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-[#FF444A] focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                                 placeholder=" "
+                              
                                 required
                             />
                             <button
                                 className="!absolute right-1 top-1 select-none rounded bg-[#FF444A] py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-white hover:shadow-lg hover:shadow-[#FF444A] focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none peer-placeholder-shown:pointer-events-none peer-placeholder-shown:bg-blue-gray-500 peer-placeholder-shown:shadow-none"
                                 type="button"
                                 data-ripple-light="true"
+                             
                             >
                                 Search
                             </button>

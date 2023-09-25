@@ -1,9 +1,14 @@
+import { useLoaderData } from "react-router-dom";
 
 
-const Statistics = () => {
+const Statistics = ({totalDonation}) => {
+    console.log(totalDonation)
+
+    const alldata = useLoaderData()
+    console.log(alldata.price);
     return (
         <div>
-            <h1>Statistics</h1>
+            <h1>My Donetion: </h1>
         </div>
     );
 };
