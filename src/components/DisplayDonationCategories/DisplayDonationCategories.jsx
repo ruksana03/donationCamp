@@ -1,8 +1,8 @@
 import DisplayDonationCategoriesCard from "./DisplayDonationCategoriesCard";
 
 
-const DisplayDonationCategories = ({categories}) => {
-    // console.log(categories)
+const DisplayDonationCategories = ({ categories, searchText, filteredCategories }) => {
+    console.log(categories, searchText,filteredCategories )
     return (
         <div className="mx-32 my-28">
            

@@ -39,8 +39,8 @@ const CategoryDetailsCard = ({ categoryDetail }) => {
                 <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} />
             </div>
             <img src={picture} alt="" />
-            <div className="bg-black h-24 shadow-black-2xl -mt-24 opacity-50"></div>
-            <button onClick={handleAddDonations} className="w-1/6 mx-9 text-xl font-semibold text-white py-4 rounded-lg -mt-20 z-0" style={{ backgroundColor: text_color }}>Donate ${price}</button>
+            <div className=" lg:bg-black h-24 shadow-black-2xl -mt-24 opacity-50"></div>
+            <button onClick={handleAddDonations} className="btn border-none md:w-2/3 lg:w-1/6 mx-9 text-xl font-semibold text-white py-4 rounded-lg -mt-20 z-0" style={{ backgroundColor: text_color }}>Donate ${price}</button>
             <h1 className="text-4xl font-bold mt-12">{title}</h1>
             <p className="text-base font-normal mt-6 ">{description}</p>
         </div>
