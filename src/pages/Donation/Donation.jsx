@@ -17,7 +17,7 @@ const Donation = () => {
             // console.log(donatedItems);
             setDonation(donatedItems);
 
-            const sum = donatedItems.reduce((preValue, currentValue)=> preValue+currentValue.price,0)
+            const sum = donatedItems.reduce((preValue, currentValue) => preValue + currentValue.price, 0)
             console.log(sum)
             setTotalDonation(sum);
 
@@ -26,11 +26,33 @@ const Donation = () => {
     }, []);
     console.log(donations);
 
+    const handleRemoveAllLocalData = () => {
+        localStorage.clear();
+        setDonation([]);
+        setNoFound("No Data Found");
+    };
+
 
     return (
-        <div>
-            <button>my donation:{totalDonation}</button>
-            <div className=" grid md:grid-cols-1 lg:grid-cols-2 gap-5 mx-32 mt-20">
+        <div className="mx-32">
+           <div className=" flex justify-between">
+           <button className="btn btn-info text-white text-lg font-medium">My Donation ${totalDonation}</button>
+            <div>{noFound ? (<p className="h-[80vh] flex justify-center items-center">{noFound}</p>
+            ) : (
+                <div>
+                    {
+                        donations.length > 0 && (
+                            <div>
+                                <button onClick={handleRemoveAllLocalData} className="btn btn-warning text-white text-lg font-medium">Delete all Donated Data</button>
+                            </div>
+                        )
+                    } </div>)
+            }
+
+
+            </div>
+           </div>
+            <div className=" grid md:grid-cols-1 lg:grid-cols-2 gap-5 mt-20">
                 {
                     isShow ? donations.map((donation) => (<AllDonationCard key={donation.id} donation={donation}></AllDonationCard>)) : donations.slice(0, 4).map((donation) => (<AllDonationCard key={donation.id} donation={donation}></AllDonationCard>))
                 }
