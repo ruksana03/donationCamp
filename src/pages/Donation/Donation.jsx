@@ -22,14 +22,14 @@ const Donation = () => {
             setTotalDonation(sum);
 
 
-        } else { setNoFound("no data found") }
+        } else { setNoFound("No Data Found!!!") }
     }, []);
     // console.log(donations);
 
     const handleRemoveAllLocalData = () => {
         localStorage.clear();
         setDonation([]);
-        setNoFound("No Data Found");
+        setNoFound("No Data Found !!!");
     };
 
 
@@ -49,32 +49,21 @@ const Donation = () => {
                 </button>}
             </div>
 
-            <div className=" flex justify-between">
-                <button className="btn btn-info text-white text-lg font-medium">My Donation ${totalDonation}</button>
-                <div>{noFound ? (<p className="h-[80vh] flex justify-center items-center">{noFound}</p>
+            
+                <div>{noFound ? (<p style={{ background: '-webkit-linear-gradient(left, #4A90E2, #FF4B2B, #FFD034)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }} className="h-[80vh] flex justify-center items-center text-6xl font-extrabold ">{noFound}</p>
                 ) : (
                     <div>
                         {
                             donations.length > 0 && (
-                                <div>
-                                    <button onClick={handleRemoveAllLocalData} className="btn btn-warning text-white text-lg font-medium">Delete all Donated Data</button>
+                                <div className=" mt-8 flex justify-center">
+                                    <button onClick={handleRemoveAllLocalData} className="btn btn-warning text-black text-lg font-medium">Delete all Donated Data</button>
                                 </div>
                             )
-                        } </div>)
-                }
+                        } </div>) }
 
 
                 </div>
-            </div>
-
-            {/* <div className=" grid md:grid-cols-1 lg:grid-cols-2 gap-5 mt-8">
-                {
-                    donations.map((donation) => (<Calculation key={donation.id}
-                        donations={donations}
-                        totalDonation={totalDonation}></Calculation>))
-                }
-            </div> */}
-
+          
         </div>
     );
 };

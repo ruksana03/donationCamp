@@ -1,34 +1,10 @@
 import { NavLink} from "react-router-dom";
 import Logo from "./logo";
-import Banner from "../Banner/Banner";
-
 
 const Navbar = () => {
-    // const location = useLocation();
-    // const isHomePage = location.pathname === '/';
-
-    // const backgroundImageUrl = isHomePage
-    //     ? 'url(https://i.ibb.co/10yxKjS/Rectangle-4281.png)'
-    //     : '';
-
-    // const backgroundStyles = {
-    //     backgroundImage: backgroundImageUrl,
-    //     backgroundSize: 'cover',
-    //     backgroundRepeat: 'no-repeat',
-    //     backgroundPosition: 'center',
-    //     opacity: isHomePage ? 0.5 : 1,
-    // };
-
-
-
     return (
-        // <div className="min-h-screen{ isHomePage && style={backgroundStyles}} ">
-        // <div style={isHomePage ? backgroundStyles : {}} className="min-h-screen">
-
-
-        // <div className="  hero-overlay bg-white bg-opacity-90"></div>
-
-        <nav className="flex justify-between mx-32 px-5 items-center">
+     <div className="z-0">
+           <nav className="flex justify-between mx-32 px-5 items-center">
             <div className="">
                 <Logo></Logo>
             </div>
@@ -61,13 +37,7 @@ const Navbar = () => {
                 </ul>
             </div>
         </nav>
-            /* banner div  */ 
-            // <div>
-            //     {
-            //         isHomePage && <Banner></Banner>
-            //     }
-            // </div>
-        // </div >
+     </div>
     );
 };
 

@@ -20,11 +20,13 @@ const HomePageBanner = () => {
     };
     return (
         <div style={isHomePageA ? backgroundStyles : {}} className="min-h-screen z-0">
-            <Navbar></Navbar>
+           <div className='z-0'>
+           <Navbar></Navbar>
+           </div>
              <div className="  hero-overlay bg-white bg-opacity-90"></div>
              
 
-            <div>
+            <div className='z-0'>
                 {
                     isHomePageA && <Banner></Banner>
                 }

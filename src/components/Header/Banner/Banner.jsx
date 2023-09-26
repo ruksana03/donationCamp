@@ -6,7 +6,7 @@ const Banner = () => {
     return (
 
 
-        <div className="z-0">
+        <div className="">
             <div className="hero min-h-screen">
                 <div className="hero-overlay bg-transparent"></div>
                 <div className="hero-content text-center text-neutral-content">

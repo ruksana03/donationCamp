@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Calculation from "../../components/Calculation/Calculation";
 
 
+
 const Statistics = () => {
 
 
@@ -10,6 +11,8 @@ const Statistics = () => {
     return (
         <div>
             <Calculation alldata ={alldata}></Calculation>
+            
+        
         </div>
     );
 };
