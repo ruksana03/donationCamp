@@ -1,4 +1,5 @@
 // import Banner from "../../components/Header/Banner/Banner";
+import Calculation from "../../components/Calculation/Calculation";
 import DisplayDonationCategories from "../../components/DisplayDonationCategories/DisplayDonationCategories";
 import { useLoaderData } from "react-router-dom";
 
@@ -11,12 +12,10 @@ const Home = () => {
     return (
         <div>
            
-            <div className=" ">
-            </div>
+           
             <div className="my-32">
             <DisplayDonationCategories categories={categories}></DisplayDonationCategories>
            </div>
-           
             
         </div>
     );

@@ -28,7 +28,7 @@ const Navbar = () => {
 
         // <div className="  hero-overlay bg-white bg-opacity-90"></div>
 
-        <nav className="flex justify-between mx-32 py-8 z-10">
+        <nav className="flex justify-between mx-32 px-5 items-center">
             <div className="">
                 <Logo></Logo>
             </div>

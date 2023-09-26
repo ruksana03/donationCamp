@@ -1,14 +1,15 @@
 import { useLoaderData } from "react-router-dom";
+import Calculation from "../../components/Calculation/Calculation";
 
 
-const Statistics = ({totalDonation}) => {
-    console.log(totalDonation)
+const Statistics = () => {
+
 
     const alldata = useLoaderData()
-    console.log(alldata.price);
+    // console.log(alldata);
     return (
         <div>
-            <h1>My Donetion: </h1>
+            <Calculation alldata ={alldata}></Calculation>
         </div>
     );
 };

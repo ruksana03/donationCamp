@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 const DisplayDonationCategoriesCard = ({ category }) => {
     const { id, picture, view_image, title, card_category, card_category_bg, card_bg, text_color, description, price } = category || {};
 
-    console.log("card_bg:", card_bg);
+    // console.log("card_bg:", card_bg);
 
-    const cardBgClass = `bg-${card_bg}`;
-    console.log("cardBgClass:", cardBgClass);
+    // const cardBgClass = `bg-${card_bg}`;
+    // console.log("cardBgClass:", cardBgClass);
 
     return (
         <div className={`rounded-lg bg-opacity-90`}
