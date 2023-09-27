@@ -5,6 +5,7 @@ import Navbar from '../Header/Navbar/Navbar';
 const HomePageBanner = () => {
     const locationA = useLocation();
     const isHomePageA = locationA.pathname === '/';
+    const isFilterDataPageB = locationA.pathname === '/filtered';
     return (
         <div className="relative grid h-[30rem] flex-col  overflow-hidden bg-white text-black">
             {/* Background Image */}
@@ -19,7 +20,7 @@ const HomePageBanner = () => {
             </div>
 
             {/* Banner */}
-            {isHomePageA && (
+            {isHomePageA || isFilterDataPageB && (
                 <div className="z-5 flex justify-evenly items-center">
                     <Banner></Banner>
                 </div>

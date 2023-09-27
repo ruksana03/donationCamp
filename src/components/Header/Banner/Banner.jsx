@@ -1,36 +1,14 @@
-import { useEffect, useState } from "react";
-import AllFilteredData from "../../AllFilteredData/AllFilteredData";
-import DisplayDonationCategories from "../../DisplayDonationCategories/DisplayDonationCategories";
-import Home from "../../../pages/Home/Home";
+import { useState } from "react";
+
 import { Link } from "react-router-dom";
-import AllDonationCard from "../../AllDonation/AllDonationCard";
+
 
 const Banner = () => {
     const [searchText, setSearchText] = useState('');
-    const [allData, setAllData] = useState([]);
-    const [displayFilteredData, setDisplayFilteredData] = useState([]);
-
-
-
-    useEffect(() => {
-        fetch('/data.json')
-            .then(res => res.json())
-            .then(data => setAllData(data));
-    }, []);
-
-    const allDataCategories = allData.map(item => item.card_category);
-
-
+ 
     const handleSearch = () => {
-        const filteredData = allData.filter((item) =>
-            item.card_category.toLowerCase().includes(searchText.toLowerCase())
-        );
-        setDisplayFilteredData(filteredData);
-        setAllData([]); // Clear the original data
         setSearchText('');
     };
-
-    console.log("displayFilteredData in Banner:", displayFilteredData);
 
     return (
         <div>
@@ -46,6 +24,7 @@ const Banner = () => {
                             value={searchText}
                             onChange={(e) => setSearchText(e.target.value)}
                         />
+                        <Link to={`/filtered?searchText=${searchText}`}>
                         <button
                             className="absolute right-0 top-0 z-10 select-none rounded-r-lg bg-[#FF444A] py-2 px-4 text-center align-middle text-base font-semibold text-white transition-all hover:shadow-lg"
                             type="button"
@@ -53,9 +32,11 @@ const Banner = () => {
                             onClick={handleSearch}>
                             Search
                         </button>
+                        </Link>
                         
                     </div>
             </div>
+          
         </div >
     );
 };
