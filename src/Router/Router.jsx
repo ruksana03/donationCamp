@@ -6,6 +6,7 @@ import Home from '../pages/Home/Home';
 import Donation from '../pages/Donation/Donation';
 import Statistics from '../pages/Statistics/Statistics';
 import CategoryDetails from '../components/CategoryDetails/CategoryDetails';
+import AllFilteredData from '../components/AllFilteredData/AllFilteredData';
 
 const Router = createBrowserRouter([
     {
@@ -33,6 +34,7 @@ const Router = createBrowserRouter([
                 element:<CategoryDetails></CategoryDetails> ,
                 loader: () => fetch('/data.json')
             },
+          
         ]
 
     }

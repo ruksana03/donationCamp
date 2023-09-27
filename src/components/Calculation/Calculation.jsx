@@ -1,7 +1,4 @@
-import { useEffect, useState } from "react";
-
-import React, { PureComponent } from 'react';
-import { PieChart, Pie, Label, Cell, ResponsiveContainer, Sector } from 'recharts';
+import React, { useEffect, useState } from "react";
 import DonationPieChart from "./DonationPieChart";
 
 
@@ -17,7 +14,7 @@ const Calculation = ({ alldata }) => {
   const [remainingPercentage, setRemainingPercentage] = useState(0);
 
 
-  useEffect(() => {
+  useEffect(() =>{ 
     const localData = JSON.parse(localStorage.getItem("donation"));
     if (localData) {
 
@@ -48,16 +45,12 @@ const Calculation = ({ alldata }) => {
     { name: 'Your Donation', value: parseFloat(donatedPercentage) },
   ];
 
-  // console.log(data)
-
-  const COLORS = ['#FF444A', '#00C49F'];
-
 
   return (
     <div className="flex flex-col justify-center items-center text-center"> {emptyLocal ? (<p style={{ background: '-webkit-linear-gradient(left, #4A90E2, #FF4B2B, #FFD034)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }} className="h-[80vh] flex justify-center items-center text-6xl font-extrabold ">{emptyLocal}</p>) : (
       //  if data available 
 
-      <div>
+      <div className=" grid grid-cols-1 mx-32">
         {/* <div>
          <h1>Donated :{allLocalData.length} Category</h1>
         <h1>My Total Donation Amount: ${donatedSum}</h1>
@@ -65,32 +58,20 @@ const Calculation = ({ alldata }) => {
         <h1>Total Donated Percentage: {donatedPercentage} %</h1>
         <h1>Remaining Percentage: {remainingPercentage} %</h1>
        </div> */}
-        <div style={{ width: "100%", height: 400 }}>
-          <ResponsiveContainer>
-            <PieChart width={400} height={400}>
-              <Pie
-                data={data}
-                cx="50%"
-                cy="50%"
-                labelLine={false}
-                // label={renderCustomizedLabel}
-                outerRadius={80}
-                fill="#8884d8"
-                dataKey="value"
-              >
-                {data.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                ))}
-              </Pie>
-            </PieChart>
-          </ResponsiveContainer>
+        <div style={{ width: "100%", height: 500 }}>
+         
+       <DonationPieChart data={data}></DonationPieChart>
         </div>
 
-        <div className="flex justify-around items-center gap-4" >
+        <div style={{ width: "100%" }} className=" mb-32 grid grid-cols-1 lg:grid-cols-2 gap-4 " >
+          <div className="flex justify-around items-center lg:gap-4">
           <p className="text-lg font-normal">Your Donation</p>
           <p className="bg-[#00C49F] w-24 h-3"></p>
+          </div>
+          <div className="flex justify-around items-center lg:gap-4 ">
           <p className="text-lg font-normal">Total Donation</p>
           <p className="bg-[#FF444A] w-24 h-3"></p>
+          </div>
         </div>
 
       </div>)}
